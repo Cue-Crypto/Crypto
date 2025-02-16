@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: black;
+    color: yellow;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Animated Background Glow */
+body::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 0, 0.3) 0%, transparent 70%);
+    animation: backgroundGlow 6s infinite alternate;
+    z-index: -1;
+}
+
+@keyframes backgroundGlow {
+    0% { transform: translate(20%, 20%) scale(1); }
+    100% { transform: translate(-20%, -20%) scale(1.2); }
+}
+
+h1 {
+    font-size: 3rem;
+    margin-top: 20px;
+    text-shadow: 0 0 10px yellow;
+}
+
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    margin: 50px auto;
+}
+
+.game-box {
+    background-color: black;
+    color: yellow;
+    font-size: 1.5rem;
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s;
+    border: 2px solid yellow;
+    font-weight: bold;
+}
+
+.game-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px yellow;
+    background-color: rgba(255, 255, 0, 0.2);
+}
