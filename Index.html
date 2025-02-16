@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Game Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 id="title">My Game Hub</h1>
+    
+    <div class="game-container" id="gameContainer">
+        <!-- Boxes will be generated dynamically -->
+    </div>
+
+    <script>
+        const games = [
+            { name: "Game 1", url: "https://yourgithubusername.github.io/game1/index.html" },
+            { name: "Game 2", url: "https://yourgithubusername.github.io/game2/index.html" },
+            { name: "Game 3", url: "https://yourgithubusername.github.io/game3/index.html" },
+            { name: "Game 4", url: "https://yourgithubusername.github.io/game4/index.html" },
+            { name: "Game 5", url: "https://yourgithubusername.github.io/game5/index.html" },
+            { name: "Game 6", url: "https://yourgithubusername.github.io/game6/index.html" },
+            { name: "Game 7", url: "https://yourgithubusername.github.io/game7/index.html" },
+            { name: "Game 8", url: "https://yourgithubusername.github.io/game8/index.html" },
+            { name: "Game 9", url: "https://yourgithubusername.github.io/game9/index.html" },
+            { name: "Game 10", url: "https://yourgithubusername.github.io/game10/index.html" },
+            { name: "Game 11", url: "https://yourgithubusername.github.io/game11/index.html" },
+            { name: "Game 12", url: "https://yourgithubusername.github.io/game12/index.html" },
+            { name: "Game 13", url: "https://yourgithubusername.github.io/game13/index.html" },
+            { name: "Game 14", url: "https://yourgithubusername.github.io/game14/index.html" },
+            { name: "Game 15", url: "https://yourgithubusername.github.io/game15/index.html" }
+        ];
+
+        const container = document.getElementById("gameContainer");
+
+        games.forEach(game => {
+            const box = document.createElement("div");
+            box.classList.add("game-box");
+            box.textContent = game.name;
+            box.onclick = () => window.location.href = game.url;
+            container.appendChild(box);
+        });
+    </script>
+</body>
+</html>
